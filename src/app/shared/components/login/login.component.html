@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-sm-8 offset-md-2">
+        <mat-card>
+            <mat-card-title class="text-center mb-4"> Login Form </mat-card-title>
+            <mat-card-content>
+                <form class="loginForm" (ngSubmit)="onLogin()" #loginForm="ngForm">
+                    <mat-form-field appearance="fill">
+                        <input type="text" #userName="ngModel" matInput ngModel name="userName" id=""
+                            placeholder="UserName" [ngModelOptions]="{ updateOn: 'blur'}"
+                            (ngModelChange)="onEmailChange($event)" />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <input type="password" matInput ngModel #password="ngModel" name="password" id=""
+                            placeholder="Password" passwordStrength />
+                    </mat-form-field>
+                    <button mat-raised-button type="submit" color="primary">Login</button>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

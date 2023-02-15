@@ -1,0 +1,39 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav>
+    <mat-nav-list (click)="sidenav.close()">
+      <a mat-list-item routerLink="/dashboard">
+        <mat-icon>library_books</mat-icon>
+        <span>Dashboard</span>
+      </a>
+      <a mat-list-item routerLink="/stdForm">
+        <mat-icon>question_answer</mat-icon>
+        <span>Add Student</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-toolbar color="primary" class="mb-4">
+    <button mat-icon-button (click)="sidenav.open()">
+      <mat-icon> menu </mat-icon>
+    </button>
+
+    <button routerLink="/dashboard" mat-button>
+      <mat-icon> dashboard </mat-icon>
+      Dashboard
+    </button>
+    <button routerLink="/stdForm" mat-button>
+      <mat-icon> add_person </mat-icon>
+      Add Student
+    </button>
+    <button mat-button (click)="onLogout()">
+      <mat-icon> account_circle </mat-icon>
+      Log Out
+    </button>
+  </mat-toolbar>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</mat-sidenav-container>
